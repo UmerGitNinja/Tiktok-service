@@ -1,5 +1,5 @@
 import { TikTokUser } from "@/types";
-import React, { useEffect } from "react";
+import React from "react";
 import _ from "lodash";
 import SearchItem from "./Search-item";
 

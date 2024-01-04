@@ -1,5 +1,6 @@
+"use client"
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import SearchMenu from "./search-menu";
 import fetcher from "@/lib/Creater-fetcher";
 import { TikTokUser } from "@/types";

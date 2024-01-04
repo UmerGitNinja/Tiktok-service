@@ -1,6 +1,3 @@
-"use client";
-
-import Link from "next/link";
 import DropDown from "./DropDown";
 const Questions = [
   {
