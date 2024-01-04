@@ -15,6 +15,8 @@ export interface useOrderMenuInterface {
   setSharesValue: (count: number) => void;
   CommentsValue: number;
   setCommentsValue: (count: number) => void;
+  isPrivate?: string;
+  setIsPrivate: (isPrivate: string) => void;
 }
 
 const useOrderMenu = create<useOrderMenuInterface>((set) => ({
@@ -33,6 +35,8 @@ const useOrderMenu = create<useOrderMenuInterface>((set) => ({
   setSharesValue: (count: number) => set(() => ({ SharesValue: count })),
   CommentsValue: 0,
   setCommentsValue: (count: number) => set(() => ({ CommentsValue: count })),
+  isPrivate: undefined,
+  setIsPrivate: (isPrivate: string) => set(() => ({ isPrivate: isPrivate })),
 }));
 
 export default useOrderMenu;
