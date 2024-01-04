@@ -9,9 +9,10 @@ interface SearchItemProps {
   label: string;
   Followers: number;
   CreatorId: string
+  Private: boolean;
 }
 
-const SearchItem: React.FC<SearchItemProps> = ({ Url, label, Followers, CreatorId }) => {
+const SearchItem: React.FC<SearchItemProps> = ({ Url, label, Followers, CreatorId ,Private}) => {
 
   return (
     <div className="flex justify-between p-4 bg-white border-b-[1px] border-grey-500">
@@ -29,7 +30,7 @@ const SearchItem: React.FC<SearchItemProps> = ({ Url, label, Followers, CreatorI
       <Link
       href={{
         pathname: "/create-order",
-        query: {Url, label, CreatorId}
+        query: {Url, label, CreatorId,Private}
       }}
       
         className="px-8 py-2 h-fit bg-[#3CACFE] rounded-full max-md:px-4 max-md:py-1 max-md:text-sm text-white font-semibold"

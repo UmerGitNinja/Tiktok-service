@@ -3,17 +3,25 @@ import React, { useEffect, useState } from "react";
 import SearchMenu from "./search-menu";
 import fetcher from "@/lib/Creater-fetcher";
 import { TikTokUser } from "@/types";
+import { CircularProgress } from "@mui/material";
 
 const SearchBar = () => {
   const [Query, setQuery] = useState("");
   const [CreatorData, setCreatorData] = useState<TikTokUser[] | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleButtonClick = async () => {
-    const data = await fetcher(Query)
-    setCreatorData(data);
+    try {
+      setIsLoading(true);
+      const data = await fetcher(Query);
+      setCreatorData(data);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
-  
 
   return (
     <div className="flex relative z-50 rounded-full p-2 w-full bg-white items-center">
@@ -33,10 +41,12 @@ const SearchBar = () => {
 
       <button
         onClick={handleButtonClick}
+        disabled={isLoading}
         type="submit"
         className="px-4 sm:text-xl text-sm sm:font-semibold font-medium whitespace-nowrap rounded-full py-2 sm:py-6 flex-1 sm:flex-[1.5] bg-[#3CACFE]"
-      >
-        Start Promotion
+      >{ isLoading ? <CircularProgress size={25} className="text-white"/> :
+        "Start Promotion"
+      }
       </button>
       {CreatorData !== null && <SearchMenu data={CreatorData || []} />}
     </div>

@@ -23,12 +23,12 @@ const Dialogue: React.FC<DialogueProps> = ({
         className
       )}
     >
-      <h3 className="text-green-500 font-semibold">{label}</h3>
+      <h3 className="text-[#3CACFE] font-semibold">{label}</h3>
       <ul className="text-white space-y-4 pl-6 caret-white list-disc">
         <li>{ListOne}</li>
         <li>{ListTwo}</li>
       </ul>
-      <h3 className="text-green-500 font-semibold">Note :</h3>
+      <h3 className="text-[#3CACFE] font-semibold">Note :</h3>
       <ul className="text-white space-y-4 pl-6 caret-white list-disc">
         <li>Once an order has been made it cannot be cancelled.</li>
         <li>

@@ -18,6 +18,7 @@ const SearchMenu = ({ data }: { data: TikTokUser[] }) => {
           Url={data?.user?.avatarMedium}
           CreatorId={data?.user?.id}
           Followers={data?.stats?.followerCount}
+          Private={data?.user?.privateAccount}
         />
       ))}
     </div>

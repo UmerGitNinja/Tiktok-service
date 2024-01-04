@@ -20,9 +20,9 @@ const Button: React.FC<ButtonProps> = ({
       onClick={onClick}
       disabled={disabled}
       className={cn(
-        "bg-[#9146FF] lg:text-lg text-base  text-white sm:w-fit self-end py-3 w-full sm:py-4 px-4 lg:px-12 rounded-md transition",
+        "bg-[#3CACFE] lg:text-lg text-base  text-white sm:w-fit self-end py-3 w-full sm:py-4 px-4 lg:px-12 rounded-md transition",
         className,
-        disabled ? "bg-[#6818e0] text-white/50" : "hover:bg-[#6818e0]/90"
+        disabled ? "bg-[#3c5cfe] text-white/50" : "hover:bg-[#3CACFE]/90"
       )}
     >
       {Label}

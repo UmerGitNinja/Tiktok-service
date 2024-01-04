@@ -21,17 +21,17 @@ const PostsList: React.FC<PostsListProps> = ({onCheckBoxChange,Url,title}) => {
 
     <Checkbox
       sx={{
-        color: "#9146FF",
+        color: "3cacfe",
         borderRadius: "50%",
         "&.Mui-checked": {
-          color: "#9146FF",
+          color: "3cacfe",
           borderRadius: "50%",
         },
       }}
       id="Song-Check"
       icon={<FaRegCircle size={20} />}
       checkedIcon={<FaCircleCheck size={20} />}
-      className="text-[#9146FF] absolute top-[5%] right-1"
+      className="text-[3cacfe] absolute top-[5%] right-1"
       onChange={handleCheckboxChange}
     />
     </div>

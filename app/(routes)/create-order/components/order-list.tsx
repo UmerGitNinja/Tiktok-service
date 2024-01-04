@@ -72,6 +72,7 @@ const OrderList: React.FC<OrderListProps> = ({
     CommentsValue,
     checkedPosts,
     FollowersValue,
+    isPrivate,
   } = useOrderMenu();
   const [Email, setEmail] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -81,7 +82,12 @@ const OrderList: React.FC<OrderListProps> = ({
   const LikesPrice = FindIndex(LikesCustomMarks, LikesValue);
   const SharesPrice = FindIndex(SharesCustomMarks, SharesValue);
   const CommentsPrice = FindIndex(CommentsCustomMarks, CommentsValue);
-  const total = (ViewPrices[ViewsPrice] + FollowerPrices[FollowersPrice]+LikePrices[LikesPrice]+SharePrices[SharesPrice]+CommentPrices[CommentsPrice]);
+  const total =
+    ViewPrices[ViewsPrice] +
+    FollowerPrices[FollowersPrice] +
+    LikePrices[LikesPrice] +
+    SharePrices[SharesPrice] +
+    CommentPrices[CommentsPrice];
 
   const Discount = limitDecimalPlaces(total * 0.05, 2);
   const OrderTotal = limitDecimalPlaces(total - Discount, 2);
@@ -141,7 +147,13 @@ const OrderList: React.FC<OrderListProps> = ({
         </AccordionSummary>
         {ListTwo && (
           <AccordionDetails>
-            <div className="flex flex-col px-4 border-t-[1px] border-[#9146FF]">
+            <div className="flex flex-col px-4 border-t-[1px] border-[#3CACFE]">
+              {isPrivate === "true" && (
+                <div className="p-4 text-red-400 border rounded bg-red-400/10 border-red-400 mt-8">
+                  Please make your account public if you require services such
+                  as views, likes, comments, and shares.
+                </div>
+              )}
               <div className="pt-4">
                 <div className="flex justify-between gap-2 items-center">
                   <div className="flex relative gap-2 items-center">
@@ -155,9 +167,9 @@ const OrderList: React.FC<OrderListProps> = ({
                       />
                       <Dialogue
                         className="top-[100%] left-0 -translate-x-[25%]"
-                        label="We can send viewers to any Twitch channel using the safest Twitch boosting services."
-                        ListOne="Start time: Live viewers may take up to 30 minutes to arrive on your live stream and will stay for the duration you have ordered."
-                        ListTwo=""
+                        label="Good Quality TikTok Followers delivered in fully natural patterns (accounts must be 'public' for orders to be processed)"
+                        ListOne="Quality : 100% Real TikTok Followers"
+                        ListTwo="Speed : We can deliver on average between 150 - 300 followers per day. Typically we pace orders to be delivered over several days."
                       />
                     </span>
                   </div>
@@ -168,7 +180,6 @@ const OrderList: React.FC<OrderListProps> = ({
                 <PriceSlider
                   setValue={setFollowersValue}
                   ValueArray={FollowersCustomMarks}
-                  disabled={false}
                 />
               </div>
               <div className="pt-4">
@@ -181,9 +192,9 @@ const OrderList: React.FC<OrderListProps> = ({
                       <CiCircleQuestion size={25} className="text-white" />
                       <Dialogue
                         className="left-0 -translate-x-[22%] top-[100%]"
-                        label="We can send viewers to any Twitch channel using the safest Twitch boosting services."
-                        ListOne="Start time: Live viewers may take up to 30 minutes to arrive on your live stream and will stay for the duration you have ordered."
-                        ListTwo=""
+                        label="Get your video views to take off fast with our high quality TikTok video views (accounts must be 'public' for orders to be processed)"
+                        ListOne="Quality : 100% Real TikTok Video Views"
+                        ListTwo="Speed : We can deliver on average between 150 - 300 followers per day. Typically we pace orders to be delivered over several days."
                       />
                     </span>
                   </div>
@@ -194,7 +205,7 @@ const OrderList: React.FC<OrderListProps> = ({
                 <PriceSlider
                   setValue={setViewsValue}
                   ValueArray={ViewsCustomMarks}
-                  disabled={false}
+                  disabled={isPrivate === "true"}
                 />
               </div>
 
@@ -208,9 +219,9 @@ const OrderList: React.FC<OrderListProps> = ({
                       <CiCircleQuestion size={25} className="text-white" />
                       <Dialogue
                         className="top-[100%] left-0 -translate-x-[50%]"
-                        label="Want to boost your posts with Twitch Followers?"
-                        ListOne="Speed : Most orders are completed within a couple of hours, however larger orders may take up to several days to be completed"
-                        ListTwo="Start Time : Orders start within 24 Hours and the completion time varies on the size of the order. Small orders took 1-3 days whereas larger orders may took several weeks."
+                        label="Give your videos a boost and with High Quality TikTok Profile Likes (accounts must be 'public' for orders to be processed)"
+                        ListOne="Quality : 100% Real TikTok Likes"
+                        ListTwo="Speed : We can deliver on average between 4k - 12k likes per day. Larger orders are spread over several days."
                       />
                     </span>
                   </div>
@@ -221,7 +232,7 @@ const OrderList: React.FC<OrderListProps> = ({
                 <PriceSlider
                   setValue={setLikesValue}
                   ValueArray={LikesCustomMarks}
-                  disabled={false}
+                  disabled={isPrivate === "true"} 
                 />
               </div>
               <div className="pt-4">
@@ -235,9 +246,9 @@ const OrderList: React.FC<OrderListProps> = ({
 
                       <Dialogue
                         className="top-[100%] left-0 -translate-x-[25%]"
-                        label="Want to build credibility by boosting Video Views?"
-                        ListOne="Speed : Most orders are completed within a couple of hours, however larger orders may take up to several days to be completed"
-                        ListTwo="Start Time : Orders start within 24 Hours and the completion time varies on the size of the order. Small orders took 1-3 days whereas larger orders may took several weeks."
+                        label="Give your videos a boost and with High Quality TikTok Profile Shares (accounts must be 'public' for orders to be processed)"
+                        ListOne="Quality : 100% Real TikTok Shares"
+                        ListTwo="Speed : We can deliver on average between 4k - 12k shares per day. Larger orders are spread over several days."
                       />
                     </span>
                   </div>
@@ -248,7 +259,7 @@ const OrderList: React.FC<OrderListProps> = ({
                 <PriceSlider
                   setValue={setSharesValue}
                   ValueArray={SharesCustomMarks}
-                  disabled={false}
+                  disabled={isPrivate === "true"}
                 />
               </div>
               <div className="pt-4">
@@ -262,8 +273,8 @@ const OrderList: React.FC<OrderListProps> = ({
 
                       <Dialogue
                         className="top-[100%] left-0 -translate-x-[25%]"
-                        label="Want to build credibility by boosting Video Views?"
-                        ListOne="Speed : Most orders are completed within a couple of hours, however larger orders may take up to several days to be completed"
+                        label="Want to increase engagement on your TikTok posts? (accounts must be 'public' for orders to be processed)"
+                        ListOne="Speed : Most orders are completed within a dauy or even a couple of hours, however larger orders may take up to several days to be completed"
                         ListTwo="Start Time : Orders start within 24 Hours and the completion time varies on the size of the order. Small orders took 1-3 days whereas larger orders may took several weeks."
                       />
                     </span>
@@ -275,10 +286,10 @@ const OrderList: React.FC<OrderListProps> = ({
                 <PriceSlider
                   setValue={setCommentsValue}
                   ValueArray={CommentsCustomMarks}
-                  disabled={false}
+                  disabled={isPrivate === "true"}
                 />
               </div>
-              <div className="flex justify-between items-center text-white py-3 border-b-[1px] border-[#9146FF]">
+              <div className="flex justify-between items-center text-white py-3 border-b-[1px] border-[#3CACFE]">
                 <span className="font-medium text-sm">Discount</span>
                 <span className="font-light text-sm">-${Discount}</span>
               </div>
@@ -289,22 +300,35 @@ const OrderList: React.FC<OrderListProps> = ({
                   <span className="text-xs font-light">Approx. </span>
                 </div>
               </div>
-              <Button Label={
-                CommentsValue === 0 ? "Next: Confirm Details" :
-                "Next: Select Post(s)"
-              }
-              onClick={() => CommentsValue === 0 ? onButtonClick?.("panel3")  : onButtonClick?.("panel2") }
-              disabled={LikesValue ===0 && CommentsValue === 0 && FollowersValue === 0 && SharesValue === 0 &&ViewsValue === 0} />
+              <Button
+                Label={
+                  CommentsValue === 0
+                    ? "Next: Confirm Details"
+                    : "Next: Select Post(s)"
+                }
+                onClick={() =>
+                  CommentsValue === 0
+                    ? onButtonClick?.("panel3")
+                    : onButtonClick?.("panel2")
+                }
+                disabled={
+                  LikesValue === 0 &&
+                  CommentsValue === 0 &&
+                  FollowersValue === 0 &&
+                  SharesValue === 0 &&
+                  ViewsValue === 0
+                }
+              />
             </div>
           </AccordionDetails>
         )}
         {ListThree && (
           <AccordionDetails>
-            <div className="px-4 py-3 flex flex-col gap-4 text-white border-t-[1px] border-[#9146FF]">
+            <div className="px-4 py-3 flex flex-col gap-4 text-white border-t-[1px] border-[#3CACFE]">
               <span className="text-sm font-light">
                 Your Saves are calculated per Video
               </span>
-              <h3 className="text-base font-semibold text-[#9146FF]">
+              <h3 className="text-base font-semibold text-[#3CACFE]">
                 Select Video(s)
               </h3>
               <PostMenu CreatorId={CreatorId} />
@@ -320,7 +344,7 @@ const OrderList: React.FC<OrderListProps> = ({
           <AccordionDetails>
             <form
               onSubmit={onSubmit}
-              className="flex flex-col gap-4 px-4 border-t-[1px] pt-4 border-[#9146FF] text-white"
+              className="flex flex-col gap-4 px-4 border-t-[1px] pt-4 border-[#3CACFE] text-white"
             >
               <p className="text-sm font-light">
                 Please enter your email address. This is where we will send you
@@ -338,7 +362,7 @@ const OrderList: React.FC<OrderListProps> = ({
                     },
                     color: "white",
                     "&:hover fieldset": {
-                      borderColor: "#9146FF",
+                      borderColor: "#3CACFE",
                     },
                   },
                 }}
@@ -356,15 +380,15 @@ const OrderList: React.FC<OrderListProps> = ({
                     <Checkbox
                       required
                       sx={{
-                        color: "#9146FF",
+                        color: "#3CACFE",
                         borderRadius: "50%",
                         "&.Mui-checked": {
-                          color: "#9146FF",
+                          color: "#3CACFE",
                           borderRadius: "50%",
                         },
                       }}
                       id="Song-Check"
-                      className="text-[#9146FF]"
+                      className="text-[#3CACFE]"
                     />
                   }
                   label={
@@ -388,7 +412,7 @@ const OrderList: React.FC<OrderListProps> = ({
               />
               <p className="text-white text-xs text-light self-center mt-4">
                 By clicking Pay button you agree to our
-                <a href="#" className="text-[#9146FF] ml-1 underline">
+                <a href="#" className="text-[#3CACFE] ml-1 underline">
                   Terms of use
                 </a>
               </p>

@@ -1,21 +1,19 @@
 "use client"
 
+import useOrderMenu from '@/hooks/useOrderMenu';
 import Slider from '@mui/material/Slider';
-import { useEffect } from "react";
 
 interface PriceSliderProps {
   setValue: (value: number) => void;
   ValueArray: any;
-  disabled: boolean;
+  disabled?: boolean;
 }
 const PriceSlider: React.FC<PriceSliderProps> = ({
   setValue,
   ValueArray,
   disabled,
 }) => {
-  useEffect(()=> {
-    console.log("Slider",disabled)
-  })
+  
   return (
     <Slider
       onChange={(e, value) =>
@@ -36,11 +34,14 @@ const PriceSlider: React.FC<PriceSliderProps> = ({
           width: "20px",
           height: "20px",
           color: "white",
-          boxShadow: "0 4px 4px rgba(102,123,154,.25)",
-          border: "2px solid purple",
+          boxShadow: "0 4px 4px rgba(60,92,254,.25)",
+          border: "2px solid #3CACFE",
         },
+        ".css-pm0kef-MuiSlider-root": {
+          color: "#3CACFE"
+        }
       }}
-      className="text-[#9146FF] h-2 !rounded-sm max-w-full"
+      className="!h-2 !rounded-sm !max-w-full"
     />
   );
 };

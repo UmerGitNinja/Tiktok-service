@@ -47,7 +47,7 @@ const OrderDetail: React.FC<OrderDetailProps> = ({ ArtistName }) => {
             color="success"
             sx={{
               "& .MuiBadge-badge": {
-                background: "#9146FF",
+                background: "#3CACFE",
                 width: 20,
                 height: 20,
               },
@@ -57,22 +57,22 @@ const OrderDetail: React.FC<OrderDetailProps> = ({ ArtistName }) => {
             badgeContent={postsCount -1}
           />
           <div className="flex flex-wrap items-start gap-2">
-            <Typography className="font-semibold text-center font-sans text-[#9146FF]">
+            <Typography className="font-semibold text-center font-sans text-[#3CACFE]">
               {ArtistName}
             </Typography>
-            <div className="py-1 px-3 font-medium block md:hidden text-[#9146FF] w-fit text-xs text-center border border-[#9146FF] rounded-full">
+            <div className="py-1 px-3 font-medium block md:hidden text-[#3CACFE] w-fit text-xs text-center border border-[#3CACFE] rounded-full">
               Selected
             </div>
           </div>
         </div>
         <div className="text-center">
           <span className="text-neutral-500 text-sm">Order Detail</span>
-          <h2 className="font-semibold text-xl text-[#9146FF]">
+          <h2 className="font-semibold text-xl text-[#3CACFE]">
             ${Total.toFixed(2)}
           </h2>
         </div>
       </div>
-      <div className="flex flex-col px-8 pb-8 border-t-[1px] border-[#9146FF]">
+      <div className="flex flex-col px-8 pb-8 border-t-[1px] border-[#3CACFE]">
         <div className="flex items-center justify-between text-white pt-4">
           <div className="inline-flex gap-3">
             <span className="font-light">{FollowersValue} Followers</span>
@@ -85,8 +85,8 @@ const OrderDetail: React.FC<OrderDetailProps> = ({ ArtistName }) => {
         <div className="inline-flex gap-3">
           <span className="font-light">{ViewsValue} Views</span>
           {postsCount > 1 && ViewsValue > 0 && (
-              <div className="py-1 px-3 font-medium block text-[#9146FF] w-fit text-xs text-center border border-[#9146FF]rounded-full">
-                {postsCount - 1} X {ViewsValue} Viewa
+              <div className="py-1 px-3 font-medium block text-[#3CACFE] w-fit text-xs text-center border border-[#3CACFE] rounded-full">
+                {postsCount - 1} X {ViewsValue} Views
               </div>
             )}
             </div>
@@ -98,7 +98,7 @@ const OrderDetail: React.FC<OrderDetailProps> = ({ ArtistName }) => {
         <div className="inline-flex gap-3">
           <span className="font-light">{LikesValue} Likes</span>
           {postsCount > 1 && LikesValue > 0 && (
-              <div className="py-1 px-3 font-medium block text-[#9146FF] w-fit text-xs text-center border border-[#9146FF] rounded-full">
+              <div className="py-1 px-3 font-medium block text-[#3CACFE] w-fit text-xs text-center border border-[#3CACFE] rounded-full">
                 {postsCount - 1} X {LikesValue} Likes
               </div>
             )}
@@ -111,7 +111,7 @@ const OrderDetail: React.FC<OrderDetailProps> = ({ ArtistName }) => {
           <div className="inline-flex gap-3">
             <span className="font-light">{SharesValue} Shares</span>
             {postsCount > 1 && SharesValue > 0 && (
-              <div className="py-1 px-3 font-medium block text-[#9146FF] w-fit text-xs text-center border border-[#9146FF] rounded-full">
+              <div className="py-1 px-3 font-medium block text-[#3CACFE] w-fit text-xs text-center border border-[#3CACFE] rounded-full">
                 {postsCount - 1} X {SharesValue} Shares
               </div>
             )}
@@ -124,7 +124,7 @@ const OrderDetail: React.FC<OrderDetailProps> = ({ ArtistName }) => {
           <div className="inline-flex gap-3">
             <span className="font-light">{SharesValue} Comments</span>
             {postsCount > 1 && CommentsValue > 0 && (
-              <div className="py-1 px-3 font-medium block text-[#9146FF] w-fit text-xs text-center border border-[#9146FF] rounded-full">
+              <div className="py-1 px-3 font-medium block text-[#3CACFE] w-fit text-xs text-center border border-[#3CACFE] rounded-full">
                 {postsCount - 1} X {CommentsValue} Comments
               </div>
             )}

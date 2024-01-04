@@ -20,14 +20,12 @@ const PostMenu: React.FC<PostsMenuProps> = ({ CreatorId }) => {
     setCheckedPosts(label);
     setPostsCount(isChecked ? postsCount + 1 : postsCount - 1);
   };
-  useEffect(() => {
-    console.log(postsData);
-  }, [postsData]);
+ 
   if (_.isEmpty(postsData)) {
     return null;
   }
   return (
-    <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 p-4 gap-4 max-h-60 overflow-y-scroll scroll-track-[#121212] scrollbar-w-1.5 scrollbar-rounded-md scrollbar scrollbar-thumb-rounded-md scrollbar-thumb-[#9146FF]">
+    <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 p-4 gap-4 max-h-60 overflow-y-scroll scroll-track-[#121212] scrollbar-w-1.5 scrollbar-rounded-md scrollbar scrollbar-thumb-rounded-md scrollbar-thumb-[3cacfe]">
       {postsData?.videos?.map((data, index) => (
         <PostsList
           key={index}
