@@ -13,9 +13,7 @@ const SearchBar = () => {
     setCreatorData(data);
   };
 
-  useEffect(() => {
-    console.log(CreatorData);
-  }, [CreatorData]);
+  
 
   return (
     <div className="flex relative z-50 rounded-full p-2 w-full bg-white items-center">
