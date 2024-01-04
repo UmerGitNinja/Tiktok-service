@@ -7,7 +7,7 @@ const createrFetcher = async (query: string) => {
     const Response = await axios.get("https://tiktok-scraper7.p.rapidapi.com/user/search/",{
       params: {
         keywords: query,
-        count: '10',
+        count: '50',
         cursor: '0'
       },
       headers: {
